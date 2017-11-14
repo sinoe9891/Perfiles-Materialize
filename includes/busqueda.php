@@ -35,6 +35,7 @@ if(empty($_POST["busca"]))
 
       while($f=$resultado->fetch_assoc()){
           $date = strtotime($f['fecha_nacimiento']);
+          $datef = strtotime($f['date_deceased']);
           $img='';
           $Titulo='';
           $boton='';
@@ -44,13 +45,16 @@ if(empty($_POST["busca"]))
           }elseif(!file_exists("img/profile_pictures/".$f['ID'].".jpg"))
             {
                if($f['genero']=='M') {
-                  $f['genero']='MASCULINO';
                   $img="img/MASCULINO.jpg";
                 }elseif ($f['genero']=='F') {
-                  $f['genero']='FEMENINO';
                   $img="img/FEMENINO.jpg";
                 }
 }
+            if($f['genero']=='M') {
+               $f['genero']='MASCULINO';
+             }elseif ($f['genero']=='F') {
+               $f['genero']='FEMENINO';
+             }
             if ($f['programa']=='0077') {
                 $Titulo='AGRONOMO';
                 $card_action='<p>Título PIA: </br><strong>INGENIERO AGRONOMO ('.$f['anioIA'].') </strong></p>
@@ -75,12 +79,12 @@ if(empty($_POST["busca"]))
             if ($f['programa']=='0777') {
                 $Titulo='INGENIERO AGRONOMO';
                 $card_action='<p>Orientación: <strong>'.$f['orientacion'].'</strong></p>
-                <p>Título del proyecto de graduación: <strong>'.$f['titulo'].'</strong></p>
+                <p>Título del proyecto de graduación:</br> <strong>'.$f['titulo'].'</strong></p>
 
-                              <p>Áreas de interés: <strong>'.$f['area_interes'].'</strong></p>
-                              <p>Lugar donde realizó su pasantia: <strong>'.$f['lugar_pasantia'].'</strong></p>
-                              <p>Experiencia de trabajo obtenia en su pasantia: <strong>'.$f['exp_pasantia'].'</strong></p>
-                              <p>Asesor de Tesis: <strong>'.$f['asesor_pasantia'].'</strong></p>
+                              <p>Áreas de interés:</br> <strong>'.$f['area_interes'].'</strong></p>
+                              <p>Lugar donde realizó su pasantia:</br> <strong>'.$f['lugar_pasantia'].'</strong></p>
+                              <p>Experiencia de trabajo obtenia en su pasantia:</br> <strong>'.$f['exp_pasantia'].'</strong></p>
+                              <p>Asesor de Tesis:</br> <strong>'.$f['asesor_tesis'].'</strong></p>
                               <a class="waves-effect waves-light btn-large ripple-effect" target="_blank" style="background-color:#e8ac35" href="'.$f['url_pasantia'].'"><i class="material-icons left">library_books</i>Tesis digital </a>';
             }
             if ($f['programa']=='0777') {
@@ -101,7 +105,7 @@ if(empty($_POST["busca"]))
             }
             }
             if(isset($_SESSION['perfiles_user']) ){
-            $boton='<a href="editarPerfil.php?id='.$f['ID'].'&url_pasantia='.$f['url_pasantia'].'&asesor_pasantia='.$f['asesor_pasantia'].'&clase='.$f['clase'].'&codigo='.$f['codigo'].'&nombres='.$f['nombres'].'&apellidos='.$f['apellidos'].'&pais='.$f['pais'].'&genero='.$f['genero'].'&programa='.$f['programa'].'&orientacion='.$f['orientacion'].'&diaGraduacion='.$f['dia_graduacion'].'&mesGraduacion='.$f['mes_graduacion'].'&estatus='.$f['estatus'].'&lugarPasantia='.$f['lugar_pasantia'].'&areaInvestigacion='.$f['area_investigacion'].'&titulo='.$f['titulo'].'&pa='.$f['pa'].'&fechaNacimiento='.$f['fecha_nacimiento'].'" class="btn-floating btn-move-up waves-effect waves-light ripple-effect red darken-2 btn-large right">
+            $boton='<a href="editarPerfil.php?id='.$f['ID'].'&url_pasantia='.$f['url_pasantia'].'&deceased='.$f['deceased'].'&date_deceased='.$f['date_deceased'].'&movil='.$f['movil'].'&telefono='.$f['telefono'].'&movil_2='.$f['movil_2'].'&telefono_2='.$f['telefono_2'].'&email='.$f['email'].'&direccion='.$f['direccion'].'&financiado_por='.$f['financiado_por'].'&asesor_tesis='.$f['asesor_tesis'].'&clase='.$f['clase'].'&codigo='.$f['codigo'].'&nombres='.$f['nombres'].'&apellidos='.$f['apellidos'].'&nacionalidad='.$f['nacionalidad'].'&genero='.$f['genero'].'&programa='.$f['programa'].'&orientacion='.$f['orientacion'].'&diaGraduacion='.$f['dia_graduacion'].'&mesGraduacion='.$f['mes_graduacion'].'&estatus='.$f['estatus'].'&lugarPasantia='.$f['lugar_pasantia'].'&areaInvestigacion='.$f['area_investigacion'].'&titulo='.$f['titulo'].'&pa='.$f['pa'].'&fechaNacimiento='.$f['fecha_nacimiento'].'" class="btn-floating btn-move-up waves-effect waves-light ripple-effect red darken-2 btn-large right">
                           <i class="material-icons">edit</i>
                         </a>';
             }
@@ -122,9 +126,15 @@ if(empty($_POST["busca"]))
                             <p>Título Obtenido: <strong>'.$Titulo.' </strong></p>
                             <p>Código: <strong>'.$f['codigo'].'</strong></p>
                             <p>Genero: <strong>'.$f['genero'].'</strong></p>
-                            <p>País: <strong>'.$f['pais'].'</strong></p>
-                            <p>Fecha de Nacimiento: <strong>'.date('d/m/Y', $date).'</strong></p>
-
+                            <p>País de origen: <strong>'.$f['nacionalidad'].'</strong></p>
+                            <p>Fecha de Nacimiento: <strong>'.date('d/m/Y', $date).'</strong></p></br>
+                            <p>Financiando por:</br> <strong>'.$f['financiado_por'].'</strong></p></br>
+                            <p>Dirección:</br> <strong>'.$f['direccion'].'</strong></p></br>
+                            <p>Teléfono: <strong>'.$f['telefono'].', '.$f['telefono_2'].'</strong></p>
+                            <p>Móvil: <strong>'.$f['movil'].', '.$f['movil_2'].'</strong></p></br>
+                            <p>Correo electrónico: <strong><a href="mailto:'.$f['email'].'">'.$f['email'].'</a></strong></p></br>
+                            <p>Fallecido: <strong>'.$f['deceased'].'</strong></p>
+                            <p>Fecha en que Falleció: <strong>'.date('d/m/Y', $datef).'</strong></p>
                           </div>
                       </div>
                         '.$boton.'
