@@ -82,8 +82,8 @@ if(empty($_POST["busca"]))
                 <p>Título del proyecto de graduación:</br> <strong>'.$f['titulo'].'</strong></p>
 
                               <p>Áreas de interés:</br> <strong>'.$f['area_interes'].'</strong></p>
-                              <p>Lugar donde realizó su pasantia:</br> <strong>'.$f['lugar_pasantia'].'</strong></p>
-                              <p>Experiencia de trabajo obtenia en su pasantia:</br> <strong>'.$f['exp_pasantia'].'</strong></p>
+                              <p>Lugar donde realizó su pasantía:</br> <strong>'.$f['lugar_pasantia'].'</strong></p>
+                              <p>Experiencia de trabajo obtenia en su pasantía:</br> <strong>'.$f['exp_pasantia'].'</strong></p>
                               <p>Asesor de Tesis:</br> <strong>'.$f['asesor_tesis'].'</strong></p>
                               <a class="waves-effect waves-light btn-large ripple-effect" target="_blank" style="background-color:#e8ac35" href="'.$f['url_pasantia'].'"><i class="material-icons left">library_books</i>Tesis digital </a>';
             }
