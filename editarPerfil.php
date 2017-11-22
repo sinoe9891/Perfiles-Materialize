@@ -24,11 +24,11 @@
         <div class="row">
           <div class="col s12"><h5>Datos Personales</h5></div>
              <div class="input-field col l3 m6 s12">
-                <input placeholder="" value="<?php echo $_GET['nombres']; ?>"  id="nombres" name="nombres" name="name" type="text" class="active validate" required>
+                <input placeholder="" value="<?php echo $_GET['nombres']; ?>"  id="nombres" name="nombres" name="name" type="text" class="active validate" required disabled>
                 <label for="name">Nombres</label>
              </div>
              <div class="input-field col l3 m6 s12">
-                <input placeholder="" value="<?php echo $_GET['apellidos']; ?>"  id="apellidos" name="apellidos" type="text" class="active validate" required>
+                <input placeholder="" value="<?php echo $_GET['apellidos']; ?>"  id="apellidos" name="apellidos" type="text" class="active validate" required disabled>
                 <label for="name"> Apellidos </label>
              </div>
              <div class="input-field col l3 m6 s12">
@@ -42,7 +42,7 @@
          </div>
          <div class="row">
            <div class="input-field col l3 m6 s12">
-                <input placeholder="" value="<?php echo $_GET['direccion']; ?>"  id="direccion" name="direccion" type="text" class="active validate" required>
+                <input placeholder="" value="<?php echo $_GET['direccion']; ?>"  id="direccion" name="direccion" type="text" class="active validate">
                 <label for="name"> Dirección actual </label>
              </div>
              <div class="input-field col l3 m6 s12">
@@ -74,7 +74,7 @@
                     <label for="name">Clase(Año de graduación)</label>
                  </div>
                 <div class="input-field col l4 m6 s12">
-           
+
                    <select hidden name="programaAcademico" id="programaAcademico">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="0077">AGRONOMO</option>
@@ -116,14 +116,14 @@
                     <label for="name"> Estatus </label>
                 </div>
             </div>
-                
-        
+
+
 
         <div class="row">
           <div class="col s12"><h5>Datos de Pasantía</h5></div>
 
         </div>
-            
+
 
         <div class="row">
             <div class="input-field col l4 m6 s12">
@@ -162,7 +162,7 @@
                 <label for="name"> Area de investigación </label>
             </div>
         </div>
-        
+
 
         <div class="row">
             <div class="input-field col l4 m6 s12">
@@ -198,15 +198,15 @@
 
     if (window.XMLHttpRequest) {
     xmlhttp3 = new XMLHttpRequest();
-    } else { 
+    } else {
     xmlhttp3 = new ActiveXObject("Microsoft.XMLHTTP");
   }
-  
+
   xmlhttp3.onreadystatechange=function() {
     if (xmlhttp3.readyState==4 && xmlhttp3.status==200) {
       var response=JSON.parse(xmlhttp3.responseText);
       var code = response[0].callingCodes[0];
-      document.getElementById("extTelefono").innerHTML="<span id='extTelefono'> (<?php echo $_GET['nacionalidad']; ?>: +"+code+")</span>"; 
+      document.getElementById("extTelefono").innerHTML="<span id='extTelefono'> (<?php echo $_GET['nacionalidad']; ?>: +"+code+")</span>";
       document.getElementById("extMovil").innerHTML="<span id='extMovil'> (<?php echo $_GET['nacionalidad']; ?>: +"+code+")</span>";
 
     }
