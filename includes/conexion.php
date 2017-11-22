@@ -13,13 +13,7 @@ $mysqli = new mysqli("localhost","root","","graduat3s");
     exit();
 
 //ESTO ES MODIFICAR REGISTRO
-function update( $id, $idz, $family, $subfamily, $tribe, $genus, $species, $locality_data, $deremination_label )
-{
 
-	global $mysqli;
-	$sql = "UPDATE entomologia3 SET family = '{$family}', subfamily = '{$subfamily}' , genus = '{$genus}', tribe = '{$tribe}', species = '{$species}', locality_data = '{$locality_data}', deremination_label = '{$deremination_label}' WHERE idz = '{$idz}'";
-	$mysqli->query( $sql );
-}
 
 } ?>
 

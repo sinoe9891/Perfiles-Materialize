@@ -1,18 +1,18 @@
  <?php
-// Aqui validamos si la variable $_POST["busca"] existe como validacion
+// Aqui validamos si la variable $_GET["busca"] existe como validacion
   // Si es que esta cargando la pagina o haciendo una bsuqueda.
-if(empty($_POST["busca"]))
+if(empty($_GET["busca"]))
 { ?>
   <div align="center">
   <?php
     echo '<h3><p><strong>ENTER TO SEARCH</strong></p></h3>';;
     // si es una Busqueda entrara en este siguente IF lo cual iniciara el proceso
-    }elseif(!empty($_POST["busca"])){
+    }elseif(!empty($_GET["busca"])){
     // Sustituimos caracteres especiales para que el servidor no lo determine como codigo
-      $busca=htmlspecialchars($_POST["busca"]);
+      $busca=htmlspecialchars($_GET["busca"]);
       //  Validacion interna de lo valores en el campo de busqueda
-      if(filter_var($_POST["busca"], FILTER_VALIDATE_INT)){
-        echo "Debes escribir letras de la A - Z";
+      if(filter_var($_GET["busca"], FILTER_VALIDATE_INT)){
+        echo "<h3><p><strong>Debes escribir letras de la A - Z</strong></p></h3> ";
       }else {
 
       require_once('conexion.php');
@@ -105,7 +105,7 @@ if(empty($_POST["busca"]))
             }
             }
             if(isset($_SESSION['perfiles_user']) ){
-            $boton='<a href="editarPerfil.php?id='.$f['ID'].'&url_pasantia='.$f['url_pasantia'].'&deceased='.$f['deceased'].'&date_deceased='.$f['date_deceased'].'&movil='.$f['movil'].'&telefono='.$f['telefono'].'&movil_2='.$f['movil_2'].'&telefono_2='.$f['telefono_2'].'&email='.$f['email'].'&direccion='.$f['direccion'].'&financiado_por='.$f['financiado_por'].'&asesor_tesis='.$f['asesor_tesis'].'&clase='.$f['clase'].'&codigo='.$f['codigo'].'&nombres='.$f['nombres'].'&apellidos='.$f['apellidos'].'&nacionalidad='.$f['nacionalidad'].'&genero='.$f['genero'].'&programa='.$f['programa'].'&orientacion='.$f['orientacion'].'&diaGraduacion='.$f['dia_graduacion'].'&mesGraduacion='.$f['mes_graduacion'].'&estatus='.$f['estatus'].'&lugarPasantia='.$f['lugar_pasantia'].'&areaInvestigacion='.$f['area_investigacion'].'&titulo='.$f['titulo'].'&pa='.$f['pa'].'&fechaNacimiento='.$f['fecha_nacimiento'].'" class="btn-floating btn-move-up waves-effect waves-light ripple-effect red darken-2 btn-large right">
+            $boton='<a href="editarPerfil.php?id='.$f['ID'].'&url_pasantia='.$f['url_pasantia'].'&deceased='.$f['deceased'].'&date_deceased='.$f['date_deceased'].'&movil='.$f['movil'].'&telefono='.$f['telefono'].'&movil_2='.$f['movil_2'].'&telefono_2='.$f['telefono_2'].'&email='.$f['email'].'&direccion='.$f['direccion'].'&financiado_por='.$f['financiado_por'].'&asesor_tesis='.$f['asesor_tesis'].'&clase='.$f['clase'].'&codigo='.$f['codigo'].'&nombres='.$f['nombres'].'&apellidos='.$f['apellidos'].'&nacionalidad='.$f['nacionalidad'].'&genero='.$f['genero'].'&programa='.$f['programa'].'&orientacion='.$f['orientacion'].'&diaGraduacion='.$f['dia_graduacion'].'&mesGraduacion='.$f['mes_graduacion'].'&estatus='.$f['estatus'].'&lugarPasantia='.$f['lugar_pasantia'].'&areaInvestigacion='.$f['area_investigacion'].'&titulo='.$f['titulo'].'&pa='.$f['pa'].'&fechaNacimiento='.$f['fecha_nacimiento'].'&anioIA='.$f['anioIA'].'&codigoIA='.$f['codigoIA'].'&exp_pasantia='.$f['exp_pasantia'].'&area_interes='.$f['area_interes'].'" class="btn-floating btn-move-up waves-effect waves-light ripple-effect red darken-2 btn-large right">
                           <i class="material-icons">edit</i>
                         </a>';
             }

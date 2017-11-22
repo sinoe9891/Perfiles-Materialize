@@ -22,12 +22,12 @@
 
     </div>
       <div align="center" class="container">
-      <form  name="form1" method="post" action="index.php" id="cdr" >
+      <form  name="form1" method="GET" action="index.php" id="cdr" >
 
 
           <p>
              <input width="50%" class="buscar " id="busca" name="busca" type="search" placeholder="ARCE COBOS" autofocus >
-             <button align="center" class="waves-effect waves-light btn-large ripple-effect" name="buscador" type="submit">
+             <button align="center" class="waves-effect waves-light btn-large ripple-effect" name="" type="submit">
       <i class="material-icons left">search</i>Buscar
     </button>
 
