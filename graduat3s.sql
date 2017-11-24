@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 22, 2017 at 10:36 PM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 5.6.31
+-- Generation Time: Nov 24, 2017 at 06:01 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 5.6.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `graduat3s`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `acceso`
+--
+
+CREATE TABLE `acceso` (
+  `user_acces` varchar(25) NOT NULL,
+  `login_acces` varchar(100) NOT NULL,
+  `ID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `acceso`
+--
+
+INSERT INTO `acceso` (`user_acces`, `login_acces`, `ID`) VALUES
+('Webmaster', 'afdd63af34e36580b100d4f4752c480c', 1);
 
 -- --------------------------------------------------------
 
@@ -6585,7 +6604,7 @@ INSERT INTO `graduat3s` (`ID`, `clase`, `codigo`, `nombres`, `apellidos`, `nacio
 (7803, 2011, '11293', 'RODRIGO', 'BADANI VEINTEMILLAS', 'BOLIVIA', 'M', '0777', NULL, 0, 'DESARROLLO SOCIOECONOMICO Y AMBIENTE', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (7804, 2011, '11077', 'JUAN JOSE', 'BAECHLI BARRERA', 'GUATEMALA', 'M', '0777', NULL, 0, 'ADMINISTRACION DE AGRONEGOCIOS', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (7805, 2011, '11292', 'ARIEL', 'BAILARIN MECHA', 'PANAMA', 'M', '0777', NULL, 0, 'DESARROLLO SOCIOECONOMICO Y AMBIENTE', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
-(7806, 2011, '11204', 'MARIA JOSE', 'BAIRES MONDRAGON', 'HONDURAS', 'F', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '3', '12', 'G2', 'Texa, A&M, USA', '', '', 'Luis Fernando Osorio, Ph.D.', 'http://bdigital.zamorano.edu/handle/11036/254', 'Efecto de la Cheddarización y dos cultivos en las propiedades físico-químicas y sensoriales del queso Durango', '', '', '1990-04-04', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
+(7806, 2011, '11204', 'MARIA JOSE', 'BAIRES MONDRAGON', 'HONDURAS', 'F', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '3', '12', 'G2', 'Texa, A&M, USA', 'Análisis Físicos y Químicos del Vino de uva muscadine y acai', 'area_investigacion', 'Luis Fernando Osorio, Ph.D.', 'http://bdigital.zamorano.edu/handle/11036/254', 'Efecto de la Cheddarización y dos cultivos en las propiedades físico-químicas y sensoriales del queso Durango', 'Agroindustria rural y desarrollo territorial', '', '1990-04-04', 'Zamorano, Fondos propios, Otras entidades', 'Col. Los Robles, Tegucigalpa, Honduras', 'mbaires@zamorano.edu', 27734074, 0, 33758070, 0, '', '0000-00-00', ''),
 (7807, 2011, '11135', 'DENISSE ANDREA', 'BALSECA DE LA CADENA', 'ECUADOR', 'F', '0777', NULL, 0, 'DESARROLLO SOCIOECONOMICO Y AMBIENTE', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (7808, 2011, '11157', 'CAMILA BEATRIZ', 'BAÑOS FUNES', 'EL SALVADOR', 'F', '0777', NULL, 0, 'DESARROLLO SOCIOECONOMICO Y AMBIENTE', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (7809, 2011, '11013', 'ARQUIMEDES JUNIER', 'BARAHONA PIMENTEL', 'PANAMA', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
@@ -6675,9 +6694,9 @@ INSERT INTO `graduat3s` (`ID`, `clase`, `codigo`, `nombres`, `apellidos`, `nacio
 (7893, 2011, '11086', 'ANDREA JACQUELINE ', 'IBAÑEZ SEMPE', 'GUATEMALA', 'F', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (7894, 2011, '11302', 'ALYAMAHIRA C.', 'IGUALADA VEGA', 'PANAMA', 'F', '0777', NULL, 0, 'ADMINISTRACION DE AGRONEGOCIOS', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (7895, 2011, '11144', 'MARIA MERCEDES', 'ISAULA RODRIGUEZ', 'HONDURAS', 'F', '0777', NULL, 0, 'ADMINISTRACION DE AGRONEGOCIOS', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
-(7896, 2011, '11069', 'ARIANA VALERIA', 'JACHO CHANGO', 'ECUADOR', 'F', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
-(7897, 2011, '11212', 'MAURICIO ALEJANDRO', 'JARRIN CARDENAS', 'ECUADOR', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', '');
+(7896, 2011, '11069', 'ARIANA VALERIA', 'JACHO CHANGO', 'ECUADOR', 'F', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', '');
 INSERT INTO `graduat3s` (`ID`, `clase`, `codigo`, `nombres`, `apellidos`, `nacionalidad`, `genero`, `programa`, `anioIA`, `codigoIA`, `orientacion`, `dia_graduacion`, `mes_graduacion`, `estatus`, `lugar_pasantia`, `exp_pasantia`, `area_investigacion`, `asesor_tesis`, `url_pasantia`, `titulo`, `area_interes`, `pa`, `fecha_nacimiento`, `financiado_por`, `direccion`, `email`, `telefono`, `telefono_2`, `movil`, `movil_2`, `deceased`, `date_deceased`, `pais_reside`) VALUES
+(7897, 2011, '11212', 'MAURICIO ALEJANDRO', 'JARRIN CARDENAS', 'ECUADOR', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (7898, 2011, '9013', 'ROBERTO ANTONIO', 'JOVEL LOPEZ', 'EL SALVADOR', 'M', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (7899, 2011, '11348', 'RAOUL JUNIOR', 'KEBREAU', 'HAITI', 'M', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (7900, 2011, '11033', 'RODOLFO ALBERTO', 'LACAYO CORELLA', 'PANAMA', 'M', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
@@ -6892,9 +6911,9 @@ INSERT INTO `graduat3s` (`ID`, `clase`, `codigo`, `nombres`, `apellidos`, `nacio
 (8109, 2012, '12002', 'ANDREA LUCRECIA', 'FION GONGORA', 'GUATEMALA', 'F', '0777', NULL, 0, 'DESARROLLO SOCIOECONOMICO Y AMBIENTE', '1', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8110, 2012, '12033', 'JORGE ANDRES', 'FLORES JARA', 'PARAGUAY', 'M', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '1', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8111, 2012, '12093', 'JABER', 'FLORES UMANZOR', 'HONDURAS', 'M', '0777', NULL, 0, 'ADMINISTRACION DE AGRONEGOCIOS', '1', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
-(8112, 2012, '12222', 'FATIMA ESTEFANIA', 'FLORES VACA', 'ECUADOR', 'F', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '1', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
-(8113, 2012, '11211', 'JULIANA', 'FRANCO VILLA', 'COLOMBIA', 'F', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '1', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', '');
+(8112, 2012, '12222', 'FATIMA ESTEFANIA', 'FLORES VACA', 'ECUADOR', 'F', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '1', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', '');
 INSERT INTO `graduat3s` (`ID`, `clase`, `codigo`, `nombres`, `apellidos`, `nacionalidad`, `genero`, `programa`, `anioIA`, `codigoIA`, `orientacion`, `dia_graduacion`, `mes_graduacion`, `estatus`, `lugar_pasantia`, `exp_pasantia`, `area_investigacion`, `asesor_tesis`, `url_pasantia`, `titulo`, `area_interes`, `pa`, `fecha_nacimiento`, `financiado_por`, `direccion`, `email`, `telefono`, `telefono_2`, `movil`, `movil_2`, `deceased`, `date_deceased`, `pais_reside`) VALUES
+(8113, 2012, '11211', 'JULIANA', 'FRANCO VILLA', 'COLOMBIA', 'F', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '1', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8114, 2012, '12254', 'ANDRES BERNARDO', 'GANDARILLAS', 'ESTADOS UNIDOS', 'M', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '1', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8115, 2012, '12180', 'ROBERTS DUVAL', 'GARCIA BOHORQUEZ', 'ECUADOR', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '1', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8116, 2012, '12204', 'ARIS EMELDO', 'GARCIA GONZALEZ', 'PANAMA', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '1', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
@@ -7109,9 +7128,9 @@ INSERT INTO `graduat3s` (`ID`, `clase`, `codigo`, `nombres`, `apellidos`, `nacio
 (8325, 2013, '13225', 'HUGO ALBERTO', 'CIFUENTES CASTILLO', 'GUATEMALA', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8326, 2013, '13084', 'LUIS FERNANDO', 'CONTRERAS VELASQUEZ', 'HONDURAS', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8327, 2013, '12214', 'JORGE ANDRES', 'CORDOVA SERRANO', 'ECUADOR', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
-(8328, 2013, '13280', 'VIVIANA ESTEFANIA', 'CORNEJO CAMPOS', 'ECUADOR', 'F', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
-(8329, 2013, '13356', 'JOHANA ALEXANDRA', 'CORONEL LAICA', 'ECUADOR', 'F', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', '');
+(8328, 2013, '13280', 'VIVIANA ESTEFANIA', 'CORNEJO CAMPOS', 'ECUADOR', 'F', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', '');
 INSERT INTO `graduat3s` (`ID`, `clase`, `codigo`, `nombres`, `apellidos`, `nacionalidad`, `genero`, `programa`, `anioIA`, `codigoIA`, `orientacion`, `dia_graduacion`, `mes_graduacion`, `estatus`, `lugar_pasantia`, `exp_pasantia`, `area_investigacion`, `asesor_tesis`, `url_pasantia`, `titulo`, `area_interes`, `pa`, `fecha_nacimiento`, `financiado_por`, `direccion`, `email`, `telefono`, `telefono_2`, `movil`, `movil_2`, `deceased`, `date_deceased`, `pais_reside`) VALUES
+(8329, 2013, '13356', 'JOHANA ALEXANDRA', 'CORONEL LAICA', 'ECUADOR', 'F', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8330, 2013, '12219', 'RAMIRO GERARDO', 'CORONEL PILCO', 'ECUADOR', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8331, 2013, '13089', 'MANUEL ALONSO', 'CORRALES ROCK', 'HONDURAS', 'M', '0777', NULL, 0, 'ADMINISTRACION DE AGRONEGOCIOS', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8332, 2013, '13300', 'AUGUSTA ESTEFANIA', 'CORREA ROJAS', 'ECUADOR', 'F', '0777', NULL, 0, 'ADMINISTRACION DE AGRONEGOCIOS', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
@@ -7326,9 +7345,9 @@ INSERT INTO `graduat3s` (`ID`, `clase`, `codigo`, `nombres`, `apellidos`, `nacio
 (8541, 2013, '13106', 'STEPHANIE MARIE', 'VASQUEZ SIKAFFY', 'HONDURAS', 'F', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8542, 2013, '13198', 'RONAL ESTUARDO', 'VASQUEZ VEGA', 'GUATEMALA', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8543, 2013, '13140', 'FELIPE', 'VASQUEZ VILLALBA', 'ECUADOR', 'M', '0777', NULL, 0, 'AMBIENTE Y DESARROLLO', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
-(8544, 2013, '13152', 'JUAN MIGUEL', 'VELASCO DEL HIERRO', 'ECUADOR', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
-(8545, 2013, '13147', 'LUIS MIGUEL', 'VELASCO DELGADO', 'ECUADOR', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', '');
+(8544, 2013, '13152', 'JUAN MIGUEL', 'VELASCO DEL HIERRO', 'ECUADOR', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', '');
 INSERT INTO `graduat3s` (`ID`, `clase`, `codigo`, `nombres`, `apellidos`, `nacionalidad`, `genero`, `programa`, `anioIA`, `codigoIA`, `orientacion`, `dia_graduacion`, `mes_graduacion`, `estatus`, `lugar_pasantia`, `exp_pasantia`, `area_investigacion`, `asesor_tesis`, `url_pasantia`, `titulo`, `area_interes`, `pa`, `fecha_nacimiento`, `financiado_por`, `direccion`, `email`, `telefono`, `telefono_2`, `movil`, `movil_2`, `deceased`, `date_deceased`, `pais_reside`) VALUES
+(8545, 2013, '13147', 'LUIS MIGUEL', 'VELASCO DELGADO', 'ECUADOR', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8546, 2013, '13035', 'ERNESTO JOSE', 'VELASQUEZ ANDINO', 'HONDURAS', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8547, 2013, '12179', 'CAMILO', 'VELEZ GONZALEZ', 'COLOMBIA', 'M', '0777', NULL, 0, 'DESARROLLO SOCIOECONOMICO Y AMBIENTE', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8548, 2013, '13279', 'MARIA DANIELA', 'VERA MENDIETA', 'ECUADOR', 'F', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '7', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
@@ -7546,9 +7565,9 @@ INSERT INTO `graduat3s` (`ID`, `clase`, `codigo`, `nombres`, `apellidos`, `nacio
 (8763, 2014, '14268', 'MIGUEL', 'PINEDA BONILLA', 'COLOMBIA', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '6', '6', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8764, 2014, '14015', 'ALEJANDRA MARIA', 'PINTO DERAS', 'HONDURAS', 'F', '0777', NULL, 0, 'AMBIENTE Y DESARROLLO', '6', '6', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8765, 2014, '14344', 'ALLAN FABRICIO', 'PINTO PADILLA', 'HONDURAS', 'M', '0777', NULL, 0, 'ADMINISTRACION DE AGRONEGOCIOS', '6', '6', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
-(8766, 2014, '14208', 'RONALD EMMANUEL', 'PIVARAL VICTORIA', 'GUATEMALA', 'M', '0777', NULL, 0, 'ADMINISTRACION DE AGRONEGOCIOS', '6', '6', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
-(8767, 2014, '14111', 'ERICK FABRICIO', 'PORTILLO MORALES', 'EL SALVADOR', 'M', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '6', '6', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', '');
+(8766, 2014, '14208', 'RONALD EMMANUEL', 'PIVARAL VICTORIA', 'GUATEMALA', 'M', '0777', NULL, 0, 'ADMINISTRACION DE AGRONEGOCIOS', '6', '6', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', '');
 INSERT INTO `graduat3s` (`ID`, `clase`, `codigo`, `nombres`, `apellidos`, `nacionalidad`, `genero`, `programa`, `anioIA`, `codigoIA`, `orientacion`, `dia_graduacion`, `mes_graduacion`, `estatus`, `lugar_pasantia`, `exp_pasantia`, `area_investigacion`, `asesor_tesis`, `url_pasantia`, `titulo`, `area_interes`, `pa`, `fecha_nacimiento`, `financiado_por`, `direccion`, `email`, `telefono`, `telefono_2`, `movil`, `movil_2`, `deceased`, `date_deceased`, `pais_reside`) VALUES
+(8767, 2014, '14111', 'ERICK FABRICIO', 'PORTILLO MORALES', 'EL SALVADOR', 'M', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '6', '6', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8768, 2014, '14133', 'NAHUEL ULPIANO', 'PUYOL GARCIA', 'PANAMA', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '6', '6', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8769, 2014, '14293', 'MELVIN ADOLFO', 'QUEZADA AVILA', 'ECUADOR', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '6', '6', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8770, 2014, '14275', 'DANEIRA ARGELIS', 'QUINTERO CORREA', 'PANAMA', 'F', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '6', '6', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
@@ -7766,9 +7785,9 @@ INSERT INTO `graduat3s` (`ID`, `clase`, `codigo`, `nombres`, `apellidos`, `nacio
 (8983, 2015, '15048', 'JAIME', 'INCER AVILES', 'NICARAGUA', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '5', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8984, 2015, '15030', 'ANNY KARINA', 'INESTROZA ANDINO', 'HONDURAS', 'F', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '5', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8985, 2015, '15258', 'ALVARO ANDRES', 'IRAZOQUE SORIA GALVARRO', 'BOLIVIA', 'M', '0777', NULL, 0, 'AMBIENTE Y DESARROLLO', '5', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
-(8986, 2015, '15095', 'DAVID FERNANDO', 'ISCOA MATUTE', 'HONDURAS', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '5', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
-(8987, 2015, '15110', 'CARLOS MIGUEL', 'JAAR QUIÑONEZ', 'HONDURAS', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '5', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', '');
+(8986, 2015, '15095', 'DAVID FERNANDO', 'ISCOA MATUTE', 'HONDURAS', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '5', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', '');
 INSERT INTO `graduat3s` (`ID`, `clase`, `codigo`, `nombres`, `apellidos`, `nacionalidad`, `genero`, `programa`, `anioIA`, `codigoIA`, `orientacion`, `dia_graduacion`, `mes_graduacion`, `estatus`, `lugar_pasantia`, `exp_pasantia`, `area_investigacion`, `asesor_tesis`, `url_pasantia`, `titulo`, `area_interes`, `pa`, `fecha_nacimiento`, `financiado_por`, `direccion`, `email`, `telefono`, `telefono_2`, `movil`, `movil_2`, `deceased`, `date_deceased`, `pais_reside`) VALUES
+(8987, 2015, '15110', 'CARLOS MIGUEL', 'JAAR QUIÑONEZ', 'HONDURAS', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '5', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8988, 2015, '15297', 'HELMER EDISON', 'JARAMILLO CAMPOVERDE', 'ECUADOR', 'M', '0777', NULL, 0, 'AMBIENTE Y DESARROLLO', '5', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8989, 2015, '15189', 'VANESSA GUADALUPE', 'JIMENEZ HUAMAN', 'PERU', 'F', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '5', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (8990, 2015, '14371', 'IRVIN JAVIER', 'JIMENEZ MARISCAL', 'ECUADOR', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '5', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
@@ -7986,9 +8005,9 @@ INSERT INTO `graduat3s` (`ID`, `clase`, `codigo`, `nombres`, `apellidos`, `nacio
 (9202, 2016, '16074', 'ANGEL JOSE', 'DELGADO ORDOÑEZ', 'GUATEMALA', 'M', '0777', NULL, 0, 'ADMINISTRACION DE AGRONEGOCIOS', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (9203, 2016, '16101', 'ARIEL EDUARDO', 'DIAZ CORDON', 'GUATEMALA', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (9204, 2016, '15282', 'MARIA GABRIELA', 'DIAZ DIAZ', 'GUATEMALA', 'F', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
-(9205, 2016, '15003', 'DIEGO JOSE', 'DIAZ GUERRA', 'GUATEMALA', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
-(9206, 2016, '16217', 'SIMON', 'DIAZ OLMOS', 'COLOMBIA', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', '');
+(9205, 2016, '15003', 'DIEGO JOSE', 'DIAZ GUERRA', 'GUATEMALA', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', '');
 INSERT INTO `graduat3s` (`ID`, `clase`, `codigo`, `nombres`, `apellidos`, `nacionalidad`, `genero`, `programa`, `anioIA`, `codigoIA`, `orientacion`, `dia_graduacion`, `mes_graduacion`, `estatus`, `lugar_pasantia`, `exp_pasantia`, `area_investigacion`, `asesor_tesis`, `url_pasantia`, `titulo`, `area_interes`, `pa`, `fecha_nacimiento`, `financiado_por`, `direccion`, `email`, `telefono`, `telefono_2`, `movil`, `movil_2`, `deceased`, `date_deceased`, `pais_reside`) VALUES
+(9206, 2016, '16217', 'SIMON', 'DIAZ OLMOS', 'COLOMBIA', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (9207, 2016, '16204', 'NELSON MIGUEL', 'DOMINGUEZ VASQUEZ', 'HONDURAS', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (9208, 2016, '16051', 'MADAI YARAAI', 'DURON ALVARADO', 'HONDURAS', 'F', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (9209, 2016, '16362', 'JORGE WILMER', 'ECHEVARRIA PEÑA', 'PERU', 'M', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
@@ -8204,11 +8223,113 @@ INSERT INTO `graduat3s` (`ID`, `clase`, `codigo`, `nombres`, `apellidos`, `nacio
 (9419, 2016, '16371', 'ISANNA MICHEL', 'VICTORIANO YNFANTE', 'REPUBLICA DOMINICANA', 'F', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (9420, 2016, '16093', 'ESTUARDO ALEXIS', 'VIDAL GOMEZ', 'HONDURAS', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (9421, 2016, '16160', 'VANESSA CAROLINA', 'VILLACIS BUSTAMANTE', 'ECUADOR', 'F', '0777', NULL, 0, 'AGROINDUSTRIA ALIMENTARIA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
-(9422, 2016, '14349', 'EMANUEL', 'VILLEDA RIVERA', 'HONDURAS', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
-(9423, 2016, '16142', 'LUIS EDUARDO', 'YANGUEZ QUINTERO', 'PANAMA', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', '');
+(9422, 2016, '14349', 'EMANUEL', 'VILLEDA RIVERA', 'HONDURAS', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', '');
 INSERT INTO `graduat3s` (`ID`, `clase`, `codigo`, `nombres`, `apellidos`, `nacionalidad`, `genero`, `programa`, `anioIA`, `codigoIA`, `orientacion`, `dia_graduacion`, `mes_graduacion`, `estatus`, `lugar_pasantia`, `exp_pasantia`, `area_investigacion`, `asesor_tesis`, `url_pasantia`, `titulo`, `area_interes`, `pa`, `fecha_nacimiento`, `financiado_por`, `direccion`, `email`, `telefono`, `telefono_2`, `movil`, `movil_2`, `deceased`, `date_deceased`, `pais_reside`) VALUES
+(9423, 2016, '16142', 'LUIS EDUARDO', 'YANGUEZ QUINTERO', 'PANAMA', 'M', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (9424, 2016, '16083', 'TANIA ALEJANDRA', 'ZUNIGA GALO', 'HONDURAS', 'F', '0777', NULL, 0, 'INGENIERIA AGRONOMICA', '3', '12', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', ''),
 (9431, 2017, '16350', 'CLINTON', 'PANDURO CASTRO', 'PERU', 'M', '0777', NULL, 0, 'AMBIENTE Y DESARROLLO', '18', '1', 'G2', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 0, 0, 0, 0, '', '0000-00-00', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_access`
+--
+
+CREATE TABLE `user_access` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `user` varchar(100) NOT NULL,
+  `cargo` varchar(100) NOT NULL,
+  `description` text NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `departamento` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user_access`
+--
+
+INSERT INTO `user_access` (`id`, `name`, `email`, `user`, `cargo`, `description`, `password`, `departamento`) VALUES
+(1, 'JesÃºs Orozco', 'jorozco@zamorano.edu', 'orozco', 'Entomologo', '', 'Entomologia17', 'Ciencia y ProducciÃ³n Agropecuaria'),
+(2, 'Danny VelÃ¡squez', 'dvelasquez@zamorano.edu', 'webmaster', 'Webmaster y CISO', '', 'Danny8921', 'Mercadeo, Imagen y ComunicaciÃ³n'),
+(11, 'Enrique Sandoval', 'enrique', 'creative', 'Administrador', '', '', 'ProducciÃ³n');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_admin`
+--
+
+CREATE TABLE `user_admin` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `usuario` varchar(30) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `cargo` varchar(100) NOT NULL,
+  `admin` tinyblob NOT NULL,
+  `description` text NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `departamento` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user_admin`
+--
+
+INSERT INTO `user_admin` (`id`, `nombre`, `usuario`, `email`, `cargo`, `admin`, `description`, `password`, `departamento`) VALUES
+(1, 'Danny VelÃ¡squez Cadenas', 'webmaster', 'dvelasquez@zamorano.edu', 'dvelasquez@zamorano.edu', '', 'webmaster', 'Danny8921', 'Mercadeo, Imagen y ComunicaciÃ³n'),
+(2, 'Christian UrquÃ­a', 'curquia', 'curquia@zamorano.edu', 'Desarrollador WEB', '', '', 'tortuga', 'Mercadeo, Imagen y ComunicaciÃ³n');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `acceso`
+--
+ALTER TABLE `acceso`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `graduat3s`
+--
+ALTER TABLE `graduat3s`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `user_access`
+--
+ALTER TABLE `user_access`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user_admin`
+--
+ALTER TABLE `user_admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `acceso`
+--
+ALTER TABLE `acceso`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `user_access`
+--
+ALTER TABLE `user_access`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `user_admin`
+--
+ALTER TABLE `user_admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
