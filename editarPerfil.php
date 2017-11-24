@@ -76,18 +76,19 @@
                 <div class="col l4 m6 s12">
 
                    <select name="programaAcademico" id="programaAcademico" class="browser-default">
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="0077">AGRONOMO</option>
-                    <option value="0707">AGRONOMO - PIA</option>
-                    <option value="0007">AGRONOMO - PPIA</option>
-                    <option value="0777">INGENIERO AGRONOMO</option>
-                    <option value="07771">INGENIERIA AGRONOMICA</option>
-                    <option value="07772">INGENIERO EN AGROINDUSTRIA ALIMENTARIA</option>
-                    <option value="07773">INGENIERO EN ADMINISTRACION DE AGRONEGOCIOS</option>
-                    <option value="07774">INGENIERO EN DESARROLLO SOCIOECONOMICO Y AMBIENTE</option>
-                    <option value="077741">INGENIERO EN AMBIENTE Y DESARROLLO</option>
+                    <option <?php if ($_GET['programa']==0007) { echo "selected";} ?> value="0007">AGRONOMO</option>
+                    <option <?php if ($_GET['programa']==0077) { echo "selected";} ?> value="0077">AGRONOMO - PIA</option>
+                    <option <?php if ($_GET['programa']==0707) { echo "selected";} ?> value="0707">AGRONOMO - PPIA</option>
+                    <option <?php if ($_GET['programa']==0777) { echo "selected";} ?> value="0777">INGENIERO AGRONOMO</option>
+                    <option <?php if ($_GET['programa']==0777 && $_GET['orientacion']=="INGENIERIA AGRONOMICA" ) { echo "selected";} ?> value="07771">INGENIERIA AGRONOMICA</option>
+                    <option <?php if ($_GET['programa']==0777 && $_GET['orientacion']=="AGROINDUSTRIA ALIMENTARIA" ) { echo "selected";} ?> value="07772">INGENIERO EN AGROINDUSTRIA ALIMENTARIA</option>
+                    <option <?php if ($_GET['programa']==0777 && $_GET['orientacion']=="ADMINISTRACION DE AGRONEGOCIOS" ) { echo "selected";} ?> value="07773">INGENIERO EN ADMINISTRACION DE AGRONEGOCIOS</option>
+                    <option <?php if ($_GET['programa']==0777 && $_GET['orientacion']=="DESARROLLO SOCIOECONOMICO Y AMBIENTE" ) { echo "selected";} ?> value="07774">INGENIERO EN DESARROLLO SOCIOECONOMICO Y AMBIENTE</option>
+                    <option <?php if ($_GET['programa']==0777 && $_GET['orientacion']=="AMBIENTE Y DESARROLLO" ) { echo "selected";} ?> value="077741">INGENIERO EN AMBIENTE Y DESARROLLO</option>
                   </select>
                   <label>Programa</label>
+
+
 
                     <!-- <input placeholder="" value="<?php //echo $Titulo; ?>"  id="programa" name="programa" type="text" class="active validate" required>
                     <label for="name"> Programa </label> -->
