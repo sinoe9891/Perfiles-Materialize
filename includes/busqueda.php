@@ -106,7 +106,7 @@ if(empty($_GET["busca"]))
             }
             }
             if(isset($_SESSION['perfiles_user']) ){
-            $boton='<a href="editarPerfil.php?id='.$f['ID'].'&url_tesis='.$f['url_tesis'].'&deceased='.$f['deceased'].'&date_deceased='.$f['date_deceased'].'&movil='.$f['movil'].'&telefono='.$f['telefono'].'&movil_2='.$f['movil_2'].'&telefono_2='.$f['telefono_2'].'&email='.$f['email'].'&direccion='.$f['direccion'].'&financiado_por='.$f['financiado_por'].'&asesor_tesis='.$f['asesor_tesis'].'&clase='.$f['clase'].'&codigo='.$f['codigo'].'&nombres='.$f['nombres'].'&apellidos='.$f['apellidos'].'&nacionalidad='.$f['nacionalidad'].'&genero='.$f['genero'].'&programa='.$f['programa'].'&orientacion='.$f['orientacion'].'&diaGraduacion='.$f['dia_graduacion'].'&mesGraduacion='.$f['mes_graduacion'].'&estatus='.$f['estatus'].'&lugarPasantia='.$f['lugar_pasantia'].'&area_investigacion='.$f['area_investigacion'].'&titulo_tesis='.$f['titulo_tesis'].'&fechaNacimiento='.$f['fecha_nacimiento'].'&anioIA='.$f['anioIA'].'&codigoIA='.$f['codigoIA'].'&exp_pasantia='.$f['exp_pasantia'].'&area_interes='.$f['area_interes'].'" class="btn-floating btn-move-up waves-effect waves-light ripple-effect red darken-2 btn-large right">
+            $boton='<a href="editarPerfil.php?id='.$f['ID'].'&otras_entidades='.$f['otras_entidades'].'&pais_reside='.$f['pais_reside'].'&url_tesis='.$f['url_tesis'].'&deceased='.$f['deceased'].'&date_deceased='.$f['date_deceased'].'&movil='.$f['movil'].'&telefono='.$f['telefono'].'&email='.$f['email'].'&direccion='.$f['direccion'].'&financiado_por='.$f['financiado_por'].'&asesor_tesis='.$f['asesor_tesis'].'&clase='.$f['clase'].'&codigo='.$f['codigo'].'&nombres='.$f['nombres'].'&apellidos='.$f['apellidos'].'&nacionalidad='.$f['nacionalidad'].'&genero='.$f['genero'].'&programa='.$f['programa'].'&orientacion='.$f['orientacion'].'&diaGraduacion='.$f['dia_graduacion'].'&mesGraduacion='.$f['mes_graduacion'].'&estatus='.$f['estatus'].'&lugarPasantia='.$f['lugar_pasantia'].'&area_investigacion='.$f['area_investigacion'].'&titulo_tesis='.$f['titulo_tesis'].'&fechaNacimiento='.$f['fecha_nacimiento'].'&anioIA='.$f['anioIA'].'&codigoIA='.$f['codigoIA'].'&exp_pasantia='.$f['exp_pasantia'].'&area_interes='.$f['area_interes'].'" class="btn-floating btn-move-up waves-effect waves-light ripple-effect red darken-2 btn-large right">
                           <i class="material-icons">edit</i>
                         </a>';
             }
@@ -129,13 +129,15 @@ if(empty($_GET["busca"]))
                             <p>Genero: <strong>'.$f['genero'].'</strong></p>
                             <p>País de origen: <strong>'.$f['nacionalidad'].'</strong></p>
                             <p>Fecha de Nacimiento: <strong>'.date('d/m/Y', $date).'</strong></p></br>
-                            <p>Dirección:</br> <strong>'.$f['direccion'].'</strong></p></br>
-                            <p>Teléfono: <strong>'.$f['telefono'].', '.$f['telefono_2'].'</strong></p>
-                            <p>Móvil: <strong>'.$f['movil'].', '.$f['movil_2'].'</strong></p></br>
+                            <p>País donde vive:</br> <strong>'.$f['pais_reside'].'</strong></p>
+                            <p>Dirección: <strong>'.$f['direccion'].'</strong></p>
+                            <p>Teléfono: <strong>'.$f['telefono'].'</strong> Móvil: <strong>'.$f['movil'].'</strong></p>
                             <p>Correo electrónico: <strong><a href="mailto:'.$f['email'].'">'.$f['email'].'</a></strong></p></br>
-                            <p>Financiando por:</br> <strong>'.$f['financiado_por'].'</strong></p></br>
+                            <p>Financiando por:</br> <strong>'.$f['financiado_por'].'</strong></p>
+                            <p>Entidades:</br> <strong>'.$f['otras_entidades'].'</strong></p></br>
                             <p>Fallecido: <strong>'.$f['deceased'].'</strong></p>
                             <p>Fecha en que Falleció: <strong>'.date('d/m/Y', $datef).'</strong></p>
+
                           </div>
                       </div>
                         '.$boton.'
