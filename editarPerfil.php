@@ -139,7 +139,7 @@
             </div>
             <div class="input-field col l4 m6 s12">
 
-                <input placeholder="" value="<?php echo $_GET['titulo']; ?>"  id="titulo" name="titulo" type="text" class="active validate" required>
+                <input placeholder="" value="<?php echo $_GET['titulo_tesis']; ?>"  id="titulo_tesis" name="titulo_tesis" type="text" class="active validate" required>
                 <label for="name"> Título del proyecto de graduación: </label>
             </div>
 
@@ -154,7 +154,7 @@
 
              <div class="input-field col l4 m6 s12">
 
-                <input placeholder="" value="<?php echo $_GET['url_pasantia']; ?>"  id="url_pasantia" name="url_pasantia" type="url" class="active validate" required>
+                <input placeholder="" value="<?php echo $_GET['url_tesis']; ?>"  id="url_tesis" name="url_tesis" type="url" class="active validate" required>
                 <label for="name"> URL Tesis</label>
             </div>
             <div class="input-field col l4 m6 s12">
@@ -227,6 +227,6 @@
 
 
 
-<!-- $boton='<a href="editarPerfil.php?id='.$f['ID'].'&url_pasantia='.$f['url_pasantia'].'&deceased='.$f['deceased'].'&date_deceased='.$f['date_deceased'].'&movil='.$f['movil'].'&telefono='.$f['telefono'].'&movil_2='.$f['movil_2'].'&telefono_2='.$f['telefono_2'].'&email='.$f['email'].'&direccion='.$f['direccion'].'&financiado_por='.$f['financiado_por'].'&asesor_tesis='.$f['asesor_tesis'].'&clase='.$f['clase'].'&codigo='.$f['codigo'].'&nombres='.$f['nombres'].'&apellidos='.$f['apellidos'].'&nacionalidad='.$f['nacionalidad'].'&genero='.$f['genero'].'&programa='.$f['programa'].'&orientacion='.$f['orientacion'].'&diaGraduacion='.$f['dia_graduacion'].'&mesGraduacion='.$f['mes_graduacion'].'&estatus='.$f['estatus'].'&lugarPasantia='.$f['lugar_pasantia'].'&area_investigacion='.$f['area_investigacion'].'&titulo='.$f['titulo'].'&pa='.$f['pa'].'&fechaNacimiento='.$f['fecha_nacimiento'].'&anioIA='.$f['anioIA'].'&codigoIA='.$f['codigoIA'].'&exp_pasantia='.$f['exp_pasantia'].'&area_interes='.$f['area_interes'].'" class="btn-floating btn-move-up waves-effect waves-light ripple-effect red darken-2 btn-large right">
+<!-- $boton='<a href="editarPerfil.php?id='.$f['ID'].'&url_tesis='.$f['url_tesis'].'&deceased='.$f['deceased'].'&date_deceased='.$f['date_deceased'].'&movil='.$f['movil'].'&telefono='.$f['telefono'].'&movil_2='.$f['movil_2'].'&telefono_2='.$f['telefono_2'].'&email='.$f['email'].'&direccion='.$f['direccion'].'&financiado_por='.$f['financiado_por'].'&asesor_tesis='.$f['asesor_tesis'].'&clase='.$f['clase'].'&codigo='.$f['codigo'].'&nombres='.$f['nombres'].'&apellidos='.$f['apellidos'].'&nacionalidad='.$f['nacionalidad'].'&genero='.$f['genero'].'&programa='.$f['programa'].'&orientacion='.$f['orientacion'].'&diaGraduacion='.$f['dia_graduacion'].'&mesGraduacion='.$f['mes_graduacion'].'&estatus='.$f['estatus'].'&lugarPasantia='.$f['lugar_pasantia'].'&area_investigacion='.$f['area_investigacion'].'&titulo_tesis='.$f['titulo_tesis'].'&pa='.$f['pa'].'&fechaNacimiento='.$f['fecha_nacimiento'].'&anioIA='.$f['anioIA'].'&codigoIA='.$f['codigoIA'].'&exp_pasantia='.$f['exp_pasantia'].'&area_interes='.$f['area_interes'].'" class="btn-floating btn-move-up waves-effect waves-light ripple-effect red darken-2 btn-large right">
                           <i class="material-icons">edit</i>
                         </a>'; -->
