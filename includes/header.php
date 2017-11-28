@@ -28,12 +28,12 @@
         }
     </style>
     <!-- Footer -->
-    <link rel="stylesheet" id="mfn-base-css" href="css3/base.css?ver=16.7" type="text/css" media="all">
+   <!--  <link rel="stylesheet" id="mfn-base-css" href="css3/base.css?ver=16.7" type="text/css" media="all">
     <link rel="stylesheet" id="mfn-layout-css" href="css3/layout.css?ver=16.7" type="text/css" media="all">
     <link rel="stylesheet" id="mfn-shortcodes-css" href="css3/shortcodes.css?ver=16.7" type="text/css" media="all">
     <link rel="stylesheet" id="mfn-animations-css" href="css3/animations.min.css?ver=16.7" type="text/css" media="all">
     <link rel="stylesheet" id="mfn-jquery-ui-css" href="css3/jquery.ui.all.css?ver=16.7" type="text/css" media="all">
-    <link rel="stylesheet" id="mfn-responsive-css" href="css3/responsive.css?ver=16.7" type="text/css" media="all">
+    <link rel="stylesheet" id="mfn-responsive-css" href="css3/responsive.css?ver=16.7" type="text/css" media="all"> -->
     <!-- This site is optimized with the Yoast SEO Premium plugin v4.4 - https://yoast.com/wordpress/plugins/seo/ -->
     <meta name="description" content="Zamorano es una universidad internacional que ofrece a jóvenes de diversas latitudes y orígenes la oportunidad de convertirse en líderes profesionales.">
     <meta name="robots" content="noodp">

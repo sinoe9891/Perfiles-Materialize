@@ -1,31 +1,120 @@
  <?php
 // Aqui validamos si la variable $_GET["busca"] existe como validacion
   // Si es que esta cargando la pagina o haciendo una bsuqueda.
-if(empty($_GET["busca"]))
-{ ?>
+if(empty($_GET))
+{ 
+  ?>
   <div align="center">
   <?php
-    echo '<h3><p><strong>ENTER TO SEARCH</strong></p></h3>';;
+  echo '<h3><p><strong>ENTER TO SEARCH</strong></p></h3>';;
     // si es una Busqueda entrara en este siguente IF lo cual iniciara el proceso
-    }elseif(!empty($_GET["busca"])){
+}elseif(!empty($_GET)){
     // Sustituimos caracteres especiales para que el servidor no lo determine como codigo
-      $busca=htmlspecialchars($_GET["busca"]);
+     // $busca=htmlspecialchars($_GET["busca"]);
       //  Validacion interna de lo valores en el campo de busqueda
-      if(filter_var($_GET["busca"], FILTER_VALIDATE_INT)){
-        echo "<h3><p><strong>Debes escribir letras de la A - Z</strong></p></h3> ";
-      }else {
-
       require_once('conexion.php');
+      $query="";
+      foreach ($_GET as $key => $value) {
+        switch ($key) {
+          case 'codigoInput':
+                if ($query=="") {
+                  $query= $query." codigo LIKE '%".$value."%'";
+                }else{
+                $query= $query." AND codigo LIKE '%".$value."%'";
+                }
+            break;
+          case 'nombresInput':
+                if ($query=="") {
+                  $query= $query." nombres LIKE '%".$value."%'";
+                }else{
+                $query= $query." AND nombres LIKE '%".$value."%'";
+                }
+            break;
+          case 'apellidosInput':
+                if ($query=="") {
+                  $query= $query." apellidos LIKE '%".$value."%'";
+                }else{
+                $query= $query." AND apellidos LIKE '%".$value."%'";
+                }
+            break;
+            case 'claseInput':
+                if ($query=="") {
+                  $query= $query." clase LIKE '%".$value."%'";
+                }else{
+                $query= $query." AND clase LIKE '%".$value."%'";
+                }
+            break;
+            case 'carreraInput':
+              $carrera=$value;
+                if ($carrera=='0777' || $carrera=='07771' || $carrera=='07772' || $carrera=='07773' || $carrera=='07774' || $carrera=='077741') {
+                  $carrera='0777';
+                } 
+                if ($query=="") {
+                  $query= $query." programa LIKE '%".$carrera."%'";
+                }else{
+                $query= $query." AND programa LIKE '%".$carrera."%'";
+                }
+            break;
+            case 'paisInput':
+                if ($query=="") {
+                  $query= $query." nacionalidad LIKE '%".$value."%'";
+                }else{
+                $query= $query." AND nacionalidad LIKE '%".$value."%'";
+                }
+            break;
+            case 'generoInput':
+                if ($query=="") {
+                  $query= $query." genero LIKE '%".$value."%'";
+                }else{
+                $query= $query." AND genero LIKE '%".$value."%'";
+                }
+            break;
+            case 'direccionInput':
+                if ($query=="") {
+                  $query= $query." direccion LIKE '%".$value."%'";
+                }else{
+                $query= $query." AND direccion LIKE '%".$value."%'";
+                }
+            break;
+            case 'ubicacionInput':
+                if ($query=="") {
+                  $query= $query." ubicacion LIKE '%".$value."%'";
+                }else{
+                $query= $query." AND ubicacion LIKE '%".$value."%'";
+                }
+            break;
+            case 'cumpleanosInput':
+                if ($query=="") {
+                  $query= $query." cumpleanos LIKE '%".$value."%'";
+                }else{
+                $query= $query." AND cumpleanos LIKE '%".$value."%'";
+                }
+            break;
+        }
+      }
+}
 
-      $busqueda="SELECT * FROM graduat3s WHERE apellidos LIKE '%".$busca."%'";
+// $sql = "SELECT * FROM `graduat3s` WHERE `codigo`=9078 AND `nombres`=\'SINDY PAOLY\' AND `apellidos`=\'PALMA BARRIENTOS\' AND `clase`=2009 AND `programa`=0777 AND `nacionalidad`=\'HONDURAS\' AND `genero`=\'F\'";
+
+
+      $busqueda="SELECT * FROM graduat3s WHERE ".$query;
+
+      print_r($busqueda);
       //cambiar nombre de la tabla de busqueda
+// http://localhost/lista-de-graduados/Perfiles-Materialize/busqueda-avanzada.php?codigoInput=11&nombresInput=maicol&apellidosInput=urquia+lara&claseInput=1946&carreraInput=07771&paisInput=SK&generoInput=F&direccionInput=croacia+calle+2&ubicacionInput=zamorano&cumpleanosInput=2017-11-16
+
+
+      //$busqueda="SELECT * FROM graduat3s WHERE apellidos LIKE '%".$query."%'";
+      //cambiar nombre de la tabla de busqueda
+// http://localhost/lista-de-graduados/Perfiles-Materialize/busqueda-avanzada.php?codigoInput=11&nombresInput=maicol&apellidosInput=urquia+lara&claseInput=1946&carreraInput=07771&paisInput=SK&generoInput=F&direccionInput=croacia+calle+2&ubicacionInput=zamorano&cumpleanosInput=2017-11-16
+
 
       $resultado = $mysqli->query($busqueda);
        //Ejecución de la consulta
             //Si hay resultados...
 
       if ($resultado->num_rows > 0){
-        $registros = '<h4 align="center"><p><strong>HEMOS ENCONTRADO ' . $resultado->num_rows . ' REGISTRO(S) PARA "'.$busca.'"</strong></p></h4>';
+        $registros = '<h4 align="center"><p><strong>HEMOS ENCONTRADO ' . $resultado->num_rows . ' REGISTRO(S)"</strong></p></h4>';
         ?><div>
 
       <?php
@@ -50,6 +139,10 @@ if(empty($_GET["busca"]))
                   $img="img/FEMENINO.jpg";
                 }
 }
+
+
+
+
             if($f['genero']=='M') {
                $f['genero']='MASCULINO';
              }elseif ($f['genero']=='F') {
@@ -156,7 +249,11 @@ if(empty($_GET["busca"]))
             <?php
             echo $registros;
           }
-}
-}
+
+
 
 ?>
+
+
+
+<!-- http://localhost/lista-de-graduados/Perfiles-Materialize/busqueda-avanzada.php?codigoInput=codigo&nombresInput=nombres&apellidosInput=apellidos&claseInput=1946&paisInput=honduras&generoInput=femenino&direccionInput=guayaquil&ubicacionInput=2222&cumpleanosInput=11-enero-2016# -->
