@@ -42,7 +42,11 @@
          </div>
          <div class="row">
            <div class="input-field col l3 m6 s12">
+<<<<<<< HEAD
              <input placeholder="" value="<?php echo $_GET['nickname']; ?>"  id="nickname" name="apodo" type="text" class="active validate" required>
+=======
+             <input placeholder="" value="<?php echo $_GET['apodo']; ?>"  id="apodo" name="apodo" type="text" class="active validate" required>
+>>>>>>> 75be047525207b01039d21db5e4e7d79540b811d
              <label for="name"> Nickname </label>
           </div>
            <div class="input-field col l3 m6 s12">
