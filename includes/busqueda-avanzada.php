@@ -2,7 +2,7 @@
 // Aqui validamos si la variable $_GET["busca"] existe como validacion
   // Si es que esta cargando la pagina o haciendo una bsuqueda.
 if(empty($_GET))
-{ 
+{
   ?>
   <div align="center">
   <?php
@@ -48,7 +48,7 @@ if(empty($_GET))
               $carrera=$value;
                 if ($carrera=='0777' || $carrera=='07771' || $carrera=='07772' || $carrera=='07773' || $carrera=='07774' || $carrera=='077741') {
                   $carrera='0777';
-                } 
+                }
                 if ($query=="") {
                   $query= $query." programa LIKE '%".$carrera."%'";
                 }else{
@@ -99,7 +99,7 @@ if(empty($_GET))
 
       $busqueda="SELECT * FROM graduat3s WHERE ".$query;
 
-      print_r($busqueda);
+
       //cambiar nombre de la tabla de busqueda
 // http://localhost/lista-de-graduados/Perfiles-Materialize/busqueda-avanzada.php?codigoInput=11&nombresInput=maicol&apellidosInput=urquia+lara&claseInput=1946&carreraInput=07771&paisInput=SK&generoInput=F&direccionInput=croacia+calle+2&ubicacionInput=zamorano&cumpleanosInput=2017-11-16
 
@@ -152,18 +152,18 @@ if(empty($_GET))
                 $Titulo='AGRONOMO';
                 $card_action='<p>Título PIA: </br><strong>INGENIERO AGRONOMO ('.$f['anioIA'].') </strong></p>
                               <p>Orientación: </br><strong>'.$f['orientacion'].'</strong></p>
-                              <p>Título del proyecto de graduación: </br><strong>'.$f['titulo'].'</strong></p>
+                              <p>Título del proyecto de graduación: </br><strong>'.$f['titulo_tesis'].'</strong></p>
                               <p>Áreas de interés: </br><strong>'.$f['area_interes'].'</strong></p>
-                              <a class="waves-effect waves-light btn-large ripple-effect" target="_blank" style="background-color:#e8ac35" href="'.$f['url_pasantia'].'"><i class="material-icons left">library_books</i>Tesis digital </a>';
+                              <a class="waves-effect waves-light btn-large ripple-effect" target="_blank" style="background-color:#e8ac35" href="'.$f['url_tesis'].'"><i class="material-icons left">library_books</i>Tesis digital </a>';
             }
             if ($f['programa']=='0707') {
                 $Titulo='AGRONOMO';
                 $card_action='<p>Título PPIA: </br><strong>INGENIERO AGRONOMO ('.$f['anioIA'].') </strong></p>
                               <p>Orientación: </br><strong>'.$f['orientacion'].'</strong></p>
-                              <p>Título del proyecto de graduación: </br><strong>'.$f['titulo'].'</strong></p>
+                              <p>Título del proyecto de graduación: </br><strong>'.$f['titulo_tesis'].'</strong></p>
 
                               <p>Áreas de interés: </br><strong>'.$f['area_interes'].'</strong></p>
-                              <a class="waves-effect waves-light btn-large ripple-effect" target="_blank" style="background-color:#e8ac35" href="'.$f['url_pasantia'].'"><i class="material-icons left">library_books</i>Tesis digital </a>';
+                              <a class="waves-effect waves-light btn-large ripple-effect" target="_blank" style="background-color:#e8ac35" href="'.$f['url_tesis'].'"><i class="material-icons left">library_books</i>Tesis digital </a>';
             }
             if ($f['programa']=='0007') {
                 $Titulo='AGRONOMO';
@@ -172,13 +172,13 @@ if(empty($_GET))
             if ($f['programa']=='0777') {
                 $Titulo='INGENIERO AGRONOMO';
                 $card_action='<p>Orientación: <strong>'.$f['orientacion'].'</strong></p>
-                <p>Título del proyecto de graduación:</br> <strong>'.$f['titulo'].'</strong></p>
+                <p>Título del proyecto de graduación:</br> <strong>'.$f['titulo_tesis'].'</strong></p>
 
                               <p>Áreas de interés:</br> <strong>'.$f['area_interes'].'</strong></p>
                               <p>Lugar donde realizó su pasantía:</br> <strong>'.$f['lugar_pasantia'].'</strong></p>
                               <p>Experiencia de trabajo obtenia en su pasantía:</br> <strong>'.$f['exp_pasantia'].'</strong></p>
                               <p>Asesor de Tesis:</br> <strong>'.$f['asesor_tesis'].'</strong></p>
-                              <a class="waves-effect waves-light btn-large ripple-effect" target="_blank" style="background-color:#e8ac35" href="'.$f['url_pasantia'].'"><i class="material-icons left">library_books</i>Tesis digital </a>';
+                              <a class="waves-effect waves-light btn-large ripple-effect" target="_blank" style="background-color:#e8ac35" href="'.$f['url_tesis'].'"><i class="material-icons left">library_books</i>Tesis digital </a>';
             }
             if ($f['programa']=='0777') {
             if ($f['orientacion']=='INGENIERIA AGRONOMICA') {
@@ -198,7 +198,7 @@ if(empty($_GET))
             }
             }
             if(isset($_SESSION['perfiles_user']) ){
-            $boton='<a href="editar-perfil.php?id='.$f['ID'].'&url_pasantia='.$f['url_pasantia'].'&deceased='.$f['deceased'].'&date_deceased='.$f['date_deceased'].'&movil='.$f['movil'].'&telefono='.$f['telefono'].'&movil_2='.$f['movil_2'].'&telefono_2='.$f['telefono_2'].'&email='.$f['email'].'&direccion='.$f['direccion'].'&financiado_por='.$f['financiado_por'].'&asesor_tesis='.$f['asesor_tesis'].'&clase='.$f['clase'].'&codigo='.$f['codigo'].'&nombres='.$f['nombres'].'&apellidos='.$f['apellidos'].'&nacionalidad='.$f['nacionalidad'].'&genero='.$f['genero'].'&programa='.$f['programa'].'&orientacion='.$f['orientacion'].'&diaGraduacion='.$f['dia_graduacion'].'&mesGraduacion='.$f['mes_graduacion'].'&estatus='.$f['estatus'].'&lugarPasantia='.$f['lugar_pasantia'].'&areaInvestigacion='.$f['area_investigacion'].'&titulo='.$f['titulo'].'&pa='.$f['pa'].'&fechaNacimiento='.$f['fecha_nacimiento'].'&anioIA='.$f['anioIA'].'&codigoIA='.$f['codigoIA'].'&exp_pasantia='.$f['exp_pasantia'].'&area_interes='.$f['area_interes'].'" class="btn-floating btn-move-up waves-effect waves-light ripple-effect red darken-2 btn-large right">
+            $boton='<a href="editar-perfil.php?id='.$f['ID'].'&url_tesis='.$f['url_tesis'].'&nickname='.$f['nickname'].'&deceased='.$f['deceased'].'&date_deceased='.$f['date_deceased'].'&movil='.$f['movil'].'&telefono='.$f['telefono'].'&email='.$f['email'].'&direccion='.$f['direccion'].'&financiado_por='.$f['financiado_por'].'&asesor_tesis='.$f['asesor_tesis'].'&clase='.$f['clase'].'&codigo='.$f['codigo'].'&nombres='.$f['nombres'].'&apellidos='.$f['apellidos'].'&nacionalidad='.$f['nacionalidad'].'&genero='.$f['genero'].'&programa='.$f['programa'].'&orientacion='.$f['orientacion'].'&diaGraduacion='.$f['dia_graduacion'].'&mesGraduacion='.$f['mes_graduacion'].'&estatus='.$f['estatus'].'&lugarPasantia='.$f['lugar_pasantia'].'&areaInvestigacion='.$f['area_investigacion'].'&titulo_tesis='.$f['titulo_tesis'].'&pa='.$f['pa'].'&fechaNacimiento='.$f['fecha_nacimiento'].'&anioIA='.$f['anioIA'].'&codigoIA='.$f['codigoIA'].'&exp_pasantia='.$f['exp_pasantia'].'&area_interes='.$f['area_interes'].'" class="btn-floating btn-move-up waves-effect waves-light ripple-effect red darken-2 btn-large right">
                           <i class="material-icons">edit</i>
                         </a>';
             }
@@ -218,13 +218,14 @@ if(empty($_GET))
                             <p>Clase: <strong>'.$f['clase'].'</strong></p>
                             <p>Título Obtenido: <strong>'.$Titulo.' </strong></p>
                             <p>Código: <strong>'.$f['codigo'].'</strong></p>
+                            <p>Nickname: <strong>'.$f['nickname'].'</strong></p>
                             <p>Genero: <strong>'.$f['genero'].'</strong></p>
                             <p>País de origen: <strong>'.$f['nacionalidad'].'</strong></p>
                             <p>Fecha de Nacimiento: <strong>'.date('d/m/Y', $date).'</strong></p></br>
                             <p>Financiando por:</br> <strong>'.$f['financiado_por'].'</strong></p></br>
                             <p>Dirección:</br> <strong>'.$f['direccion'].'</strong></p></br>
-                            <p>Teléfono: <strong>'.$f['telefono'].', '.$f['telefono_2'].'</strong></p>
-                            <p>Móvil: <strong>'.$f['movil'].', '.$f['movil_2'].'</strong></p></br>
+                            <p>Teléfono: <strong>'.$f['telefono'].'</strong></p>
+                            <p>Móvil: <strong>'.$f['movil'].'</strong></p></br>
                             <p>Correo electrónico: <strong><a href="mailto:'.$f['email'].'">'.$f['email'].'</a></strong></p></br>
                             <p>Fallecido: <strong>'.$f['deceased'].'</strong></p>
                             <p>Fecha en que Falleció: <strong>'.date('d/m/Y', $datef).'</strong></p>

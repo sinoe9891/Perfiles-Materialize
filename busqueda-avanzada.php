@@ -2,7 +2,9 @@
 <html>
   <?php require_once('includes/session.php'); 
     if (isset($_SESSION)) {
-    if (isset($_SESSION['perfiles_user'])) {
+     require_once('includes/security.php');
+    if (security($_SERVER['PHP_SELF'])) {
+      // print_r('accesoPrivado');
       
     require_once('includes/header.php');
   ?>
@@ -100,12 +102,16 @@
                     <option <?php if(isset($_GET['carreraInput'])){if($_GET['carreraInput']=='0007'){echo "selected";}} ?> value="0007">AGRONOMO</option>
                     <option <?php if(isset($_GET['carreraInput'])){if($_GET['carreraInput']=='0077'){echo "selected";}} ?> value="0077">AGRONOMO - PIA</option>
                     <option <?php if(isset($_GET['carreraInput'])){if($_GET['carreraInput']=='0707'){echo "selected";}} ?> value="0707">AGRONOMO - PPIA</option>
-                    <option <?php if(isset($_GET['carreraInput'])){if($_GET['carreraInput']=='0777'){echo "selected";}} ?> value="0777">INGENIERO AGRONOMO</option>
-                    <option <?php if(isset($_GET['carreraInput'])){if($_GET['carreraInput']=='07771'){echo "selected";}} ?> value="07771">INGENIERIA AGRONOMICA (4X4)</option>
-                    <option <?php if(isset($_GET['carreraInput'])){if($_GET['carreraInput']=='07772'){echo "selected";}} ?> value="07772">INGENIERO EN AGROINDUSTRIA ALIMENTARIA(4X4)</option>
-                    <option <?php if(isset($_GET['carreraInput'])){if($_GET['carreraInput']=='07773'){echo "selected";}} ?> value="07773">INGENIERO EN ADMINISTRACION DE AGRONEGOCIOS(4X4)</option>
-                    <option <?php if(isset($_GET['carreraInput'])){if($_GET['carreraInput']=='07774'){echo "selected";}} ?> value="07774">INGENIERO EN DESARROLLO SOCIOECONOMICO Y AMBIENTE(4X4) ahora IAD</option>
-                    <option <?php if(isset($_GET['carreraInput'])){if($_GET['carreraInput']=='077741'){echo "selected";}} ?> value="077741">INGENIERO EN AMBIENTE Y DESARROLLO(4X4)</option>
+                    <option disabled>-- 4X4 --</option>
+                    <option <?php if(isset($_GET['carreraInput'])){if($_GET['carreraInput']=='07771'){echo "selected";}} ?> value="07771">INGENIERIA AGRONOMICA</option>
+                    <option <?php if(isset($_GET['carreraInput'])){if($_GET['carreraInput']=='07772'){echo "selected";}} ?> value="07772">INGENIERO EN AGROINDUSTRIA ALIMENTARIA</option>
+                    <option <?php if(isset($_GET['carreraInput'])){if($_GET['carreraInput']=='07773'){echo "selected";}} ?> value="07773">INGENIERO EN ADMINISTRACION DE AGRONEGOCIOS</option>
+                    <option <?php if(isset($_GET['carreraInput'])){if($_GET['carreraInput']=='07774'){echo "selected";}} ?> value="07774">INGENIERO EN AMBIENTE Y DESARROLLO</option>
+                    <option disabled>-- Clases 2002 / 2012</option>
+  
+                    <option <?php if(isset($_GET['carreraInput'])){if($_GET['carreraInput']=='077721'){echo "selected";}} ?> value="077721">AGROINDUSTRIA</option>
+                    <option <?php if(isset($_GET['carreraInput'])){if($_GET['carreraInput']=='077731'){echo "selected";}} ?> value="077731">GESTION DE AGRONEGOCIOS</option>
+                    <option <?php if(isset($_GET['carreraInput'])){if($_GET['carreraInput']=='077741'){echo "selected";}} ?> value="077741">DESARROLLO SOCIOECONOMICO Y AMBIENTE</option>
                   </select>
                    
                   </div>
@@ -387,45 +393,32 @@
                 <div class="col s12 m6 l6">
                   <div class="row">
                     <p>
-                      <input type="checkbox" class="filled-in" id="direccion"  />
-                      <label for="direccion">Dirección</label>
-                    </p>
-                  </div>
-                  <div class="input-field row">
-                    <input name="direccionInput" hidden disabled required value="<?php if(isset($_GET['direccionInput'])){ echo $_GET['direccionInput'];}?>" id="direccionInput" type="text" class="validate">
-                    <label for="direccionInput">Dirección</label>
-                  </div>
-                </div>
-
-
-                </div>
-                <div class="row">
-
-
-                <div class="col s12 m6 l6">
-                  <div class="row">
-                    <p>
-                      <input type="checkbox" class="filled-in" id="ubicacion"  />
-                      <label for="ubicacion">Ubicación actual</label>
-                    </p>
-                  </div>
-                  <div class="input-field row">
-                    <input name="ubicacionInput" hidden disabled required value="<?php if(isset($_GET['ubicacionInput'])){ echo $_GET['ubicacionInput'];}?>" id="ubicacionInput" type="text" class="validate">
-                    <label for="ubicacionInput">Ubicación actual</label>
-                  </div>
-                </div>
-
-                <div class="col s12 m6 l6">
-                  <div class="row">
-                    <p>
                       <input type="checkbox" class="filled-in" id="cumpleanos"  />
                       <label for="cumpleanos">Cumpleaños</label>
                     </p>
                   </div>
                   <div class="input-field row">
+                    <select id="cumpleanosInput" name="cumpleanosInput" hidden disabled >
+                      <option value="">Selecciona un mes</option>
+                      <option <?php if(isset($_GET['cumpleanosInput'])){if($_GET['cumpleanosInput']=='01'){echo "selected";}} ?> value="01">ENERO</option>
+                      <option <?php if(isset($_GET['cumpleanosInput'])){if($_GET['cumpleanosInput']=='02'){echo "selected";}} ?> value="02">FEBRERO</option>
+                      <option <?php if(isset($_GET['cumpleanosInput'])){if($_GET['cumpleanosInput']=='03'){echo "selected";}} ?> value="03">MARZO</option>
+                      <option <?php if(isset($_GET['cumpleanosInput'])){if($_GET['cumpleanosInput']=='04'){echo "selected";}} ?> value="04">ABRIL</option>
+                      <option <?php if(isset($_GET['cumpleanosInput'])){if($_GET['cumpleanosInput']=='05'){echo "selected";}} ?> value="05">MAYO</option>
+                      <option <?php if(isset($_GET['cumpleanosInput'])){if($_GET['cumpleanosInput']=='06'){echo "selected";}} ?> value="06">JUNIO</option>
+                      <option <?php if(isset($_GET['cumpleanosInput'])){if($_GET['cumpleanosInput']=='07'){echo "selected";}} ?> value="07">JULIO</option>
+                      <option <?php if(isset($_GET['cumpleanosInput'])){if($_GET['cumpleanosInput']=='08'){echo "selected";}} ?> value="08">AGOSTO</option>
+                      <option <?php if(isset($_GET['cumpleanosInput'])){if($_GET['cumpleanosInput']=='09'){echo "selected";}} ?> value="09">SEPTIEMBRE</option>
+                      <option <?php if(isset($_GET['cumpleanosInput'])){if($_GET['cumpleanosInput']=='10'){echo "selected";}} ?> value="10">OCTUBRE</option>
+                      <option <?php if(isset($_GET['cumpleanosInput'])){if($_GET['cumpleanosInput']=='11'){echo "selected";}} ?> value="11">NOVIEMBRE</option>
+                      <option <?php if(isset($_GET['cumpleanosInput'])){if($_GET['cumpleanosInput']=='12'){echo "selected";}} ?> value="12">DICIEMBRE</option>
+                  </select>
+                   
+                  </div>
+                  <!-- <div class="input-field row">
                     <input name="cumpleanosInput" hidden disabled required value="<?php if(isset($_GET['cumpleanosInput'])){ echo $_GET['cumpleanosInput'];}?>" id="cumpleanosInput" type="date" class="validate">
                     <label for="cumpleanosInput">Cumpleaños</label>
-                  </div>
+                  </div> -->
                 </div>
 
                 
@@ -441,7 +434,12 @@
             </form>
           </div>
 
-            <?php require_once('includes/busqueda-avanzada.php'); ?>
+            <?php
+            if (!empty($_GET)) {
+              require_once('includes/busqueda-avanzada.php');
+            }
+             
+              ?>
           </div>
           </div>
          </div>
@@ -529,27 +527,7 @@
                                document.getElementById('generoInput').hidden=true;
               }
 
-              var check = document.getElementById('direccion').checked;
-              if (document.getElementById('direccionInput').value!="") {
-                document.getElementById('direccion').checked=true;
-                document.getElementById('direccionInput').disabled=false;
-                document.getElementById('direccionInput').hidden=false;
-              }else if (check) {document.getElementById('direccionInput').disabled=false;
-                          document.getElementById('direccionInput').hidden=false;
-              }else if(!check){document.getElementById('direccionInput').disabled=true;
-                               document.getElementById('direccionInput').hidden=true;
-              }
 
-              var check = document.getElementById('ubicacion').checked;
-              if (document.getElementById('ubicacionInput').value!="") {
-                document.getElementById('ubicacion').checked=true;
-                document.getElementById('ubicacionInput').disabled=false;
-                document.getElementById('ubicacionInput').hidden=false;
-              }else if (check) {document.getElementById('ubicacionInput').disabled=false;
-                          document.getElementById('ubicacionInput').hidden=false;
-              }else if(!check){document.getElementById('ubicacionInput').disabled=true;
-                               document.getElementById('ubicacionInput').hidden=true;
-              }
 
               var check = document.getElementById('cumpleanos').checked;
               if (document.getElementById('cumpleanosInput').value!="") {
@@ -636,25 +614,6 @@
               
           });
 
-          document.getElementById('direccion').addEventListener("click", function(){
-             var check = document.getElementById('direccion').checked;
-              if (check) {document.getElementById('direccionInput').disabled=false;
-                          document.getElementById('direccionInput').hidden=false;
-              }else if(!check){document.getElementById('direccionInput').disabled=true;
-                               document.getElementById('direccionInput').hidden=true;
-              }
-              
-          });
-
-          document.getElementById('ubicacion').addEventListener("click", function(){
-             var check = document.getElementById('ubicacion').checked;
-              if (check) {document.getElementById('ubicacionInput').disabled=false;
-                          document.getElementById('ubicacionInput').hidden=false;
-              }else if(!check){document.getElementById('ubicacionInput').disabled=true;
-                               document.getElementById('ubicacionInput').hidden=true;
-              }
-              
-          });
 
           document.getElementById('cumpleanos').addEventListener("click", function(){
              var check = document.getElementById('cumpleanos').checked;
@@ -668,10 +627,10 @@
 
 
           document.getElementById('boton').addEventListener('click', function(){
-            console.log(document.getElementById('codigo').checked +' - '+document.getElementById('nombres').checked +' - '+document.getElementById('apellidos').checked +' - '+document.getElementById('clase').checked +' - '+document.getElementById('carrera').checked +' - '+document.getElementById('pais').checked +' - '+document.getElementById('genero').checked +' - '+document.getElementById('direccion').checked +' - '+document.getElementById('ubicacion').checked +' - '+document.getElementById('cumpleanos').checked);
+            console.log(document.getElementById('codigo').checked +' - '+document.getElementById('nombres').checked +' - '+document.getElementById('apellidos').checked +' - '+document.getElementById('clase').checked +' - '+document.getElementById('carrera').checked +' - '+document.getElementById('pais').checked +' - '+document.getElementById('genero').checked +' - '+document.getElementById('cumpleanos').checked);
 
 
-              if (document.getElementById('codigo').checked==true || document.getElementById('nombres').checked==true || document.getElementById('apellidos').checked==true || document.getElementById('clase').checked==true || document.getElementById('carrera').checked==true || document.getElementById('pais').checked==true || document.getElementById('genero').checked==true || document.getElementById('direccion').checked==true || document.getElementById('ubicacion').checked==true || document.getElementById('cumpleanos').checked==true ){
+              if (document.getElementById('codigo').checked==true || document.getElementById('nombres').checked==true || document.getElementById('apellidos').checked==true || document.getElementById('clase').checked==true || document.getElementById('carrera').checked==true || document.getElementById('pais').checked==true || document.getElementById('genero').checked==true ||  document.getElementById('cumpleanos').checked==true ){
                 // document.getElementById('cdr').submit();
                 $('#cdr').find('[type="submit"]').trigger('click');
               }else{

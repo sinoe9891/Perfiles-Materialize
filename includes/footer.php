@@ -12,8 +12,10 @@
           <?php if (!isset( $_SESSION['perfiles_user'] )) {?>                
                   <li><a class="grey-text text-lighten-3" href="acceso.php">Log in</a></li>
                 <?php }elseif (isset( $_SESSION['perfiles_user'] )) {?> 
+
                   <li><a class="grey-text text-lighten-3" href="includes/logout.php">Log out: <?php echo "Usuario: ".$_SESSION['perfiles_user']; ?></a></li>
-                  <li><a class="grey-text text-lighten-3" href="#">Agregar Nueva Pasantía</a></li>
+                  <li><a class="grey-text text-lighten-3" href="busqueda-avanzada.php">Busqueda avanzada</a></li>
+                  
 
                 <?php } ?> 
           <li><a class="white-text" href="https://www.zamorano.edu/mapa-del-sitio/">Mapa del Sitio</a></li>

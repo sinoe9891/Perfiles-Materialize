@@ -42,6 +42,10 @@
          </div>
          <div class="row">
            <div class="input-field col l3 m6 s12">
+             <input placeholder="" value="<?php echo $_GET['apodo']; ?>"  id="apodo" name="apodo" type="text" class="active validate" required>
+             <label for="name"> Nickname </label>
+          </div>
+           <div class="input-field col l3 m6 s12">
                 <input placeholder="" value="<?php echo $_GET['direccion']; ?>"  id="direccion" name="direccion" type="text" class="active validate" required>
                 <label for="name"> Dirección actual </label>
              </div>
@@ -117,14 +121,14 @@
                     <label for="name"> Estatus </label>
                 </div>
             </div>
-                
-        
+
+
 
         <div class="row">
           <div class="col s12"><h5>Datos de Pasantía</h5></div>
 
         </div>
-            
+
 
         <div class="row">
             <div class="input-field col l4 m6 s12">
@@ -139,7 +143,7 @@
             </div>
             <div class="input-field col l4 m6 s12">
 
-                <input placeholder="" value="<?php echo $_GET['titulo']; ?>"  id="titulo" name="titulo" type="text" class="active validate" required>
+                <input placeholder="" value="<?php echo $_GET['titulo_tesis']; ?>"  id="titulo_tesis" name="titulo_tesis" type="text" class="active validate" required>
                 <label for="name"> Título del proyecto de graduación: </label>
             </div>
 
@@ -154,16 +158,16 @@
 
              <div class="input-field col l4 m6 s12">
 
-                <input placeholder="" value="<?php echo $_GET['url_pasantia']; ?>"  id="url_pasantia" name="url_pasantia" type="url" class="active validate" required>
+                <input placeholder="" value="<?php echo $_GET['url_tesis']; ?>"  id="url_tesis" name="url_tesis" type="url" class="active validate" required>
                 <label for="name"> URL Tesis</label>
             </div>
             <div class="input-field col l4 m6 s12">
 
-                <input placeholder="" value="<?php echo $_GET['areaInvestigacion']; ?>"  id="areaInvestigacion" name="areaInvestigacion" type="text" class="active validate" required>
-                <label for="name"> Area de investigación </label>
+                <input placeholder="" value="<?php echo $_GET['area_interes']; ?>"  id="area_interes" name="area_interes" type="text" class="active validate" required>
+                <label for="name"> Area de interes </label>
             </div>
         </div>
-        
+
 
         <div class="row">
             <div class="input-field col l4 m6 s12">
@@ -172,11 +176,7 @@
                 <label for="name"> Financiado por: </label>
             </div>
 
-            <div class="input-field col l4 m6 s12">
 
-                <input placeholder="" value="<?php echo $_GET['pa']; ?>"  id="pa" name="pa" type="number" class="active validate" required>
-                <label for="name"> Promedio acumulado </label>
-             </div>
              <div class="input-field col l4 m6 s12">
 
                 <input placeholder="" value="<?php echo $_GET['fechaNacimiento']; ?>"  id="fechaNacimiento" name="fechaNacimiento" type="date" class="active validate" required>
@@ -199,15 +199,15 @@
 
     if (window.XMLHttpRequest) {
     xmlhttp3 = new XMLHttpRequest();
-    } else { 
+    } else {
     xmlhttp3 = new ActiveXObject("Microsoft.XMLHTTP");
   }
-  
+
   xmlhttp3.onreadystatechange=function() {
     if (xmlhttp3.readyState==4 && xmlhttp3.status==200) {
       var response=JSON.parse(xmlhttp3.responseText);
       var code = response[0].callingCodes[0];
-      document.getElementById("extTelefono").innerHTML="<span id='extTelefono'> (<?php echo $_GET['nacionalidad']; ?>: +"+code+")</span>"; 
+      document.getElementById("extTelefono").innerHTML="<span id='extTelefono'> (<?php echo $_GET['nacionalidad']; ?>: +"+code+")</span>";
       document.getElementById("extMovil").innerHTML="<span id='extMovil'> (<?php echo $_GET['nacionalidad']; ?>: +"+code+")</span>";
 
     }
@@ -233,6 +233,6 @@
 
 
 
-<!-- $boton='<a href="editarPerfil.php?id='.$f['ID'].'&url_pasantia='.$f['url_pasantia'].'&deceased='.$f['deceased'].'&date_deceased='.$f['date_deceased'].'&movil='.$f['movil'].'&telefono='.$f['telefono'].'&movil_2='.$f['movil_2'].'&telefono_2='.$f['telefono_2'].'&email='.$f['email'].'&direccion='.$f['direccion'].'&financiado_por='.$f['financiado_por'].'&asesor_tesis='.$f['asesor_tesis'].'&clase='.$f['clase'].'&codigo='.$f['codigo'].'&nombres='.$f['nombres'].'&apellidos='.$f['apellidos'].'&nacionalidad='.$f['nacionalidad'].'&genero='.$f['genero'].'&programa='.$f['programa'].'&orientacion='.$f['orientacion'].'&diaGraduacion='.$f['dia_graduacion'].'&mesGraduacion='.$f['mes_graduacion'].'&estatus='.$f['estatus'].'&lugarPasantia='.$f['lugar_pasantia'].'&areaInvestigacion='.$f['area_investigacion'].'&titulo='.$f['titulo'].'&pa='.$f['pa'].'&fechaNacimiento='.$f['fecha_nacimiento'].'&anioIA='.$f['anioIA'].'&codigoIA='.$f['codigoIA'].'&exp_pasantia='.$f['exp_pasantia'].'&area_interes='.$f['area_interes'].'" class="btn-floating btn-move-up waves-effect waves-light ripple-effect red darken-2 btn-large right">
+<!-- $boton='<a href="editarPerfil.php?id='.$f['ID'].'&url_tesis='.$f['url_tesis'].'&deceased='.$f['deceased'].'&date_deceased='.$f['date_deceased'].'&movil='.$f['movil'].'&telefono='.$f['telefono'].'&movil_2='.$f['movil_2'].'&telefono_2='.$f['telefono_2'].'&email='.$f['email'].'&direccion='.$f['direccion'].'&apodo='.$f['apodo'].'&financiado_por='.$f['financiado_por'].'&asesor_tesis='.$f['asesor_tesis'].'&clase='.$f['clase'].'&codigo='.$f['codigo'].'&nombres='.$f['nombres'].'&apellidos='.$f['apellidos'].'&nacionalidad='.$f['nacionalidad'].'&genero='.$f['genero'].'&programa='.$f['programa'].'&orientacion='.$f['orientacion'].'&diaGraduacion='.$f['dia_graduacion'].'&mesGraduacion='.$f['mes_graduacion'].'&estatus='.$f['estatus'].'&lugarPasantia='.$f['lugar_pasantia'].'&area_interes='.$f['area_interes'].'&titulo_tesis='.$f['titulo_tesis'].'&pa='.$f['pa'].'&fechaNacimiento='.$f['fecha_nacimiento'].'&anioIA='.$f['anioIA'].'&codigoIA='.$f['codigoIA'].'&exp_pasantia='.$f['exp_pasantia'].'&area_interes='.$f['area_interes'].'" class="btn-floating btn-move-up waves-effect waves-light ripple-effect red darken-2 btn-large right">
                           <i class="material-icons">edit</i>
                         </a>'; -->
