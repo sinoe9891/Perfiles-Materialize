@@ -59,6 +59,19 @@ if (validar_clave(htmlspecialchars($_POST["password"]), $error_encontrado)){
     		
     		$_SESSION = array();
     		$_SESSION['perfiles_user'] = $user_data['user_acces'];
+    
+        header("Expires: Tue, 01 Jul 2001 06:00:00 GMT");
+        header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+        header("Cache-Control: no-store, no-cache, must-revalidate");
+        header("Cache-Control: post-check=0, pre-check=0", false);
+        header("Pragma: no-cache");
+
+        $_SESSION['userAgent'] = $_SERVER['HTTP_USER_AGENT'];
+        $_SESSION['SKey'] = uniqid(mt_rand(), true);
+        $_SESSION['IPaddress'] = $_SERVER['SERVER_ADDR'];
+        $_SESSION['LastActivity'] = $_SERVER['REQUEST_TIME'];
+
+    
     		header('Location: ../index.php');
   		}else{
       echo "PASSWORD INCORRECTO: " . $error_encontrado;
